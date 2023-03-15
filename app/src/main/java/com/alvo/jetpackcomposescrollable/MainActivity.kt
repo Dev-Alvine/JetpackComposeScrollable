@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ExperimentalGraphicsApi
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -28,7 +29,7 @@ import com.alvo.jetpackcomposescrollable.ui.theme.JetpackComposeScrollableTheme
 import androidx.compose.foundation.lazy.LazyVerticalGrid as LazyVerticalGrid1
 
 class MainActivity : ComponentActivity() {
-    @OptIn(ExperimentalFoundationApi::class)
+    @OptIn(ExperimentalFoundationApi::class, ExperimentalGraphicsApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -60,7 +61,7 @@ class MainActivity : ComponentActivity() {
                                         imageVector = Icons.Default.Notifications,
                                         modifier = Modifier
                                             .clip(shape = CircleShape)
-//                                            .background(Color.hsl(0.0f, 0.0f, 0.7f, .3f))
+                                            .background(Color.hsl(0.5f, 0.2f, 0.7f, .3f))
                                             .size(25.dp),
                                         contentDescription = null,
                                     )
@@ -75,7 +76,7 @@ class MainActivity : ComponentActivity() {
                     LazyColumn(
                         
                         verticalArrangement = Arrangement.spacedBy(10.dp),
-                        modifier = Modifier.fillMaxSize(1f)
+                        modifier = Modifier.fillMaxSize()
                     )
                     {
                         item {
@@ -120,11 +121,8 @@ class MainActivity : ComponentActivity() {
 
 
 
-
-                        }
-
-                    Spacer(modifier = Modifier.height(20.dp))
-
+                        item {
+                            Spacer(modifier = Modifier.height(20.dp))
                     LazyVerticalGrid1(
                         cells = GridCells.Fixed(2),
                         modifier = Modifier
@@ -135,6 +133,12 @@ class MainActivity : ComponentActivity() {
                             MountainCell(boxContents[index])
                         }
                     }
+
+                        }
+
+                        }
+
+
                     }
                 }
             }
@@ -251,7 +255,7 @@ class MainActivity : ComponentActivity() {
             BoxImage = R.drawable.img1,
             ratingIcon = R.drawable.rating_star,
             rating = "4.9",
-            name = " Norther Mountain",
+            name = " Norther hills",
             city = " Tekergat,",
             country = "Sunamgnj ",
             locationIcon = R.drawable.ic_location
@@ -294,9 +298,9 @@ class MainActivity : ComponentActivity() {
             BoxImage = R.drawable.img5,
             ratingIcon = R.drawable.rating_star,
             rating = "3.5",
-            name = " Evarest Mountain",
-            city = " Seattle, ",
-            country = "Mexico ",
+            name = " Juja falls",
+            city = " Kakamega, ",
+            country = "Kenya ",
             locationIcon = R.drawable.ic_location,
         ),
         BoxItem(
@@ -304,9 +308,9 @@ class MainActivity : ComponentActivity() {
             BoxImage = R.drawable.city1,
             ratingIcon = R.drawable.rating_star,
             rating = "3.5",
-            name = " Kilimanjaro Mountain",
-            city = " Tanganyika, ",
-            country = "Tanzania ",
+            name = "Modern Transportation",
+            city = " Kisumu, ",
+            country = "Kenya ",
             locationIcon = R.drawable.ic_location,
         ),
         BoxItem(
@@ -314,7 +318,7 @@ class MainActivity : ComponentActivity() {
             BoxImage = R.drawable.city2,
             ratingIcon = R.drawable.rating_star,
             rating = "3.5",
-            name = " Favoured Mountain",
+            name = " Modern Technology",
             city = " Nyeri, ",
             country = "Kenya ",
             locationIcon = R.drawable.ic_location,
@@ -323,18 +327,18 @@ class MainActivity : ComponentActivity() {
 
             BoxImage = R.drawable.city3,
             ratingIcon = R.drawable.rating_star,
-            rating = "3.5",
-            name = " Western Mountain",
+            rating = "4.5",
+            name = " Modern Design",
             city = " Bungoma, ",
-            country = "Uganda ",
+            country = "Kenya ",
             locationIcon = R.drawable.ic_location,
         ),
         BoxItem(
 
             BoxImage = R.drawable.city4,
             ratingIcon = R.drawable.rating_star,
-            rating = "3.5",
-            name = " Easter Mountain",
+            rating = "4.5",
+            name = " Network Cities",
             city = " Nakuru, ",
             country = "Kenya ",
             locationIcon = R.drawable.ic_location,
